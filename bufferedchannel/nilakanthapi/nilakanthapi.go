@@ -71,8 +71,8 @@ func main() {
 
 		case <-interrupt:
 			ticker.Stop()
-			fmt.Println("Program interrupted by the user")
-			return
+			fmt.Println("El program fue interrumpido")
+			os.Exit(1)
 		}
 	}
 }
