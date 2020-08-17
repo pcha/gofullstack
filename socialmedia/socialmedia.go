@@ -1,3 +1,4 @@
+// This package implements common functionality needed for social media web applications.
 package socialmedia
 
 import "time"
