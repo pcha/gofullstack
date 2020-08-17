@@ -2,6 +2,7 @@ package socialmedia
 
 import "time"
 
+//go:generate stringer -type=MoodState
 type MoodState int
 
 const (
