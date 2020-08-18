@@ -3,8 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
-	"regexp"
+	"gofullstack/validationkit"
 )
 
 const UsernameRegex string = `^@?(\w){1,15}$`
@@ -15,17 +14,5 @@ func main() {
 	flag.Parse()
 
 	fmt.Println("GopherFace Username Validation Checker")
-	fmt.Println("Checking Syntax for Username, \""+usernameInput+"\", resulted in:", CheckUsernameSyntax(usernameInput))
-}
-
-func CheckUsernameSyntax(username string) bool {
-	validationResult := false
-	r, err := regexp.Compile(UsernameRegex)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	validationResult = r.MatchString(username)
-
-	return validationResult
+	fmt.Println("Checking Syntax for Username, \""+usernameInput+"\", resulted in:", validationkit.CheckUsernameSyntax(usernameInput))
 }
