@@ -3,8 +3,7 @@ package main
 import (
 	"fmt"
 	"gofullstack/gopherface/socialmedia"
-	"html/template"
-	"log"
+	"gofullstack/gopherface/templatesUtil"
 	"net/http"
 )
 
@@ -13,15 +12,7 @@ func displaySocialMediaPostHandler(w http.ResponseWriter, r *http.Request) {
 		"Check out the Go website", "https://golang.org", "/images/gogopher.png",
 		"", []string{"go", "golang", "programming language"})
 	fmt.Printf("myPost: %+v\n", myPost)
-	renderTemplate(w, "./templates/socialmediapost.html", myPost)
-}
-
-func renderTemplate(w http.ResponseWriter, templateFile string, templateData interface{}) {
-	t, err := template.ParseFiles(templateFile)
-	if err != nil {
-		log.Fatal("Error encountered while parsing the template: ", err)
-	}
-	_ = t.Execute(w, templateData)
+	templatesUtil.RenderTemplate(w, "./templates/socialmediapost.html", myPost)
 }
 
 func main() {
