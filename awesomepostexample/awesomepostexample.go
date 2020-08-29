@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gofullstack/socialmedia"
+	"gofullstack/gopherface/socialmedia"
 )
 
 func main() {
